@@ -117,7 +117,7 @@ describe('validator module', () => {
     });
 
     it('objects', () => {
-      expect(validator.getValidator({ flip: "flip" })).toBe(validator.isObject);
+      expect(validator.getValidator({ flip: 'flip' })).toBe(validator.isObject);
 
     });
 
@@ -132,7 +132,7 @@ describe('validator module', () => {
     });
 
     it('array of strings', () => {
-      expect(validator.getValidator(["a", "string"], true)).toBe(validator.isArrayOfStrings);
+      expect(validator.getValidator(['a', 'string'], true)).toBe(validator.isArrayOfStrings);
 
     });
 
