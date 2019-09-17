@@ -103,7 +103,6 @@ describe('validator module', () => {
   describe('get validator for', () => {
 
     it('strings', () => {
-      // TODO: pass getValidator the rules
       expect(validator.getValidator('stingfff')).toBe(validator.isString);
     });
 
@@ -113,7 +112,7 @@ describe('validator module', () => {
     });
 
     it('arrays', () => {
-      expect(validator.getValidator([1, 2])).toBe(validator.isArray);
+      expect(validator.getValidator([1, 2, 3])).toBe(validator.isArray);
 
     });
 
@@ -133,22 +132,22 @@ describe('validator module', () => {
     });
 
     it('array of strings', () => {
-      expect(validator.getValidator(["a", "string"])).toBe(validator.isArrayOfStrings);
+      expect(validator.getValidator(["a", "string"], true)).toBe(validator.isArrayOfStrings);
 
     });
 
     it('array of numbers', () => {
-      expect(validator.getValidator([6, 9])).toBe(validator.isArrayOfNumbers);
+      expect(validator.getValidator([6, 9], true)).toBe(validator.isArrayOfNumbers);
 
     });
 
-    it.skip('array of objects', () => {
-      expect(validator.getValidator([{}, {}])).toBe(validator.isArrayOfObjects);
+    it('array of objects', () => {
+      expect(validator.getValidator([{}, {}], true)).toBe(validator.isArrayOfObjects);
 
     });
 
-    it.skip('array of booleans', () => {
-      expect(validator.getValidator([true, false])).toBe(validator.isArrayOfBooleans);
+    it('array of booleans', () => {
+      expect(validator.getValidator([true, false], true)).toBe(validator.isArrayOfBooleans);
 
     });
 
